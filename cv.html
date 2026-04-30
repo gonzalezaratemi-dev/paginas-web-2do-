@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CV - Emilio Zarate</title>
+
+<!-- NOTA: Puedes cambiar la fuente si deseas otra similar -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+    body {
+        margin: 0;
+        font-family: 'Poppins', sans-serif;
+        background-color: #2c3e50;
+    }
+
+    .container {
+        width: 900px;
+        margin: 40px auto;
+        display: flex;
+        background-color: #ecf0f1;
+        border-radius: 20px;
+        overflow: hidden;
+    }
+
+    /* COLUMNA IZQUIERDA */
+    .left {
+        width: 55%;
+        padding: 30px;
+        background-color: #f5f5f5;
+    }
+
+    h2 {
+        font-size: 16px;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    p {
+        font-size: 13px;
+        color: #555;
+    }
+
+    ul {
+        padding-left: 20px;
+    }
+
+    li {
+        font-size: 13px;
+        margin-bottom: 5px;
+    }
+
+    /* COLUMNA DERECHA */
+    .right {
+        width: 45%;
+        background-color: #2c3e50;
+        color: white;
+        padding: 30px;
+        position: relative;
+        text-align: center;
+    }
+
+    .name {
+        font-size: 26px;
+        font-weight: 700;
+        letter-spacing: 2px;
+    }
+
+    .subtitle {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+
+    .photo {
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        border: 8px solid #ecf0f1;
+        margin: 20px auto;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .section {
+        margin-top: 25px;
+        text-align: left;
+    }
+
+    .section h3 {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    .contact-item {
+        font-size: 12px;
+        margin-bottom: 8px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .icon {
+        width: 16px;
+        height: 16px;
+    }
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- COLUMNA IZQUIERDA -->
+    <div class="left">
+
+        <!-- SOBRE MI -->
+        <h2>
+            <!-- NOTA: Inserta aquí tu icono en carpeta CV -->
+            <img src="CV/user.png" class="icon"> SOBRE MI
+        </h2>
+        <p>
+            Soy un estudiante de preparatoria, con mucho ingenio y dedicación, me considero una persona responsable y dedicada.
+            Buscando mi primera experiencia laboral.
+        </p>
+
+        <!-- PROYECTOS -->
+        <h2>
+            <img src="CV/project.png" class="icon"> PROYECTOS ESCOLARES Y ACTIVIDADES EXTRACURRICULARES
+        </h2>
+        <p>
+            Participación en proyectos escolares de ciencia, emprendimientos y artes.
+        </p>
+        <p>
+            Participación en deportes y club de música.
+        </p>
+
+        <!-- SKILLS -->
+        <h2>
+            <img src="CV/skills.png" class="icon"> SKILLS
+        </h2>
+        <ul>
+            <li>Comunicación efectiva</li>
+            <li>Trabajo en equipo</li>
+            <li>Resolución de problemas</li>
+            <li>Adaptabilidad</li>
+            <li>Organización</li>
+            <li>Responsabilidad</li>
+            <li>Pensamiento crítico</li>
+        </ul>
+
+        <!-- IDIOMAS -->
+        <h2>
+            <img src="CV/language.png" class="icon"> IDIOMAS
+        </h2>
+        <ul>
+            <li>Inglés avanzado</li>
+            <li>Español</li>
+        </ul>
+
+    </div>
+
+    <!-- COLUMNA DERECHA -->
+    <div class="right">
+
+        <div class="name">EMILIO ZARATE</div>
+        <div class="subtitle">Estudiante preparatoria</div>
+
+        <!-- FOTO -->
+        <!-- NOTA IMPORTANTE: Coloca tu foto en la carpeta CV con el nombre foto.jpg -->
+        <div class="photo" style="background-image: url('CV/foto.jpg');"></div>
+
+        <!-- CONTACTO -->
+        <div class="section">
+            <h3>CONTACTAME</h3>
+            <div class="contact-item">
+                <img src="CV/phone.png" class="icon"> 722 172 1114
+            </div>
+            <div class="contact-item">
+                <img src="CV/email.png" class="icon"> gonzalezaratemio@gmail.com
+            </div>
+            <div class="contact-item">
+                <img src="CV/location.png" class="icon"> Privada villada, Jocotitlan
+            </div>
+        </div>
+
+        <!-- EDUCACION -->
+        <div class="section">
+            <h3>EDUCACION</h3>
+            <p><strong>Instituto Cultural Canadiense</strong><br>Preparatoria<br>2023 - 2026</p>
+            <p><strong>Instituto Cultural Canadiense</strong><br>Secundaria<br>2020 - 2023</p>
+        </div>
+
+        <!-- REFERENCIAS -->
+        <div class="section">
+            <h3>REFERENCIAS</h3>
+            <p><strong>Alicia Valdés Enríquez</strong><br>Docente<br>Phone: 722 114 0243</p>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

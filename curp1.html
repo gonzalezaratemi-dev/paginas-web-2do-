@@ -1,46 +1,178 @@
-body {
-    background-color: #e0e0e0; /* Gris claro para resaltar el documento */
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 40px 0;
-    margin: 0;
-}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualizador de Documento - CURP</title>
+    <style>
+        /* CONFIGURACIÓN GENERAL */
+        :root {
+            --verde-gob: #13322b;
+            --dorado-gob: #9d8143;
+            --gris-texto: #333333;
+        }
 
-.main-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-}
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #525659; /* Color fondo visor PDF */
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            margin: 0;
+        }
 
-.document-frame {
-    background-color: white;
-    padding: 10px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2); /* Sombra para dar profundidad */
-    border-radius: 4px;
-    max-width: 90%;
-}
+        .hoja-a4 {
+            width: 740px; /* Ancho estándar aproximado */
+            background-color: white;
+            padding: 40px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.5);
+            min-height: 1000px;
+        }
 
-.reference-img {
-    display: block;
-    width: 100%;
-    height: auto;
-    max-width: 750px; /* Tamaño ideal para lectura en pantalla */
-}
+        /* SECCIÓN SUPERIOR (CONSTANCIA) */
+        .constancia-contenedor {
+            border: 12px solid transparent;
+            border-color: var(--verde-gob); 
+            padding: 15px;
+            position: relative;
+            text-align: center;
+        }
 
-.info-panel {
-    background: #2d3436;
-    color: #dfe6e9;
-    padding: 15px 25px;
-    border-radius: 8px;
-    font-size: 14px;
-    border-left: 5px solid #00b894;
-}
+        .header-titulos h1 {
+            color: var(--verde-gob);
+            font-size: 22px;
+            margin: 5px 0;
+            letter-spacing: 1px;
+        }
 
-code {
-    background: #636e72;
-    padding: 2px 5px;
-    border-radius: 3px;
-}
+        .header-titulos h2 {
+            color: var(--dorado-gob);
+            font-size: 13px;
+            margin: 0;
+            font-weight: normal;
+        }
+
+        .seccion-datos {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 25px;
+            text-align: left;
+        }
+
+        .datos-principales {
+            flex-grow: 1;
+            padding-left: 20px;
+        }
+
+        .dato-label {
+            font-size: 11px;
+            color: #555;
+            font-weight: bold;
+            margin-bottom: 2px;
+        }
+
+        .dato-valor {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+        }
+
+        /* REFERENCIA A LA IMAGEN curp.png */
+        .img-referencia {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+        }
+
+        /* SECCIÓN CARTA INFERIOR */
+        .carta-cuerpo {
+            margin-top: 30px;
+            font-size: 11.5px;
+            line-height: 1.5;
+            color: var(--gris-texto);
+            text-align: justify;
+        }
+
+        .firma-digital {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .firma-nombre {
+            font-weight: bold;
+            font-size: 13px;
+            text-transform: uppercase;
+        }
+
+        /* NOTAS DE AYUDA PARA EL PROGRAMADOR */
+        .dev-note {
+            background: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 10px;
+            font-size: 10px;
+            margin-top: 20px;
+            color: #856404;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="hoja-a4">
+        
+       Captura de pantalla 2026-05-13 210609.png
+        
+        <div class="constancia-contenedor">
+            <div class="header-titulos">
+                <h1>ESTADOS UNIDOS MEXICANOS</h1>
+                <h2>CONSTANCIA DE LA CLAVE ÚNICA DE REGISTRO DE POBLACIÓN</h2>
+            </div>
+
+            <div class="seccion-datos">
+                <!-- Espacio para el logo "Soy México" -->
+                <div style="width: 80px;">
+                    <p style="font-size: 9px; color: #999;">[Logo Soy México]</p>
+                </div>
+
+                <div class="datos-principales">
+                    <div class="dato-label">Clave:</div>
+                    <div class="dato-valor">GOZC081113HMCNRMA2</div>
+
+                    <div class="dato-label">Nombre:</div>
+                    <div class="dato-valor">CAMILO GONZALEZ ZARATE</div>
+                </div>
+
+                <!-- QR - Aquí llamamos a tu archivo curp.png pero lo limitamos a un área -->
+                <div class="qr-box">
+                    <p style="font-size: 9px;">[QR de curp.png]</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- NOTA: Usamos curp.png como referencia central para validar el diseño -->
+        <img src="curp.png" alt="Referencia CURP" class="img-referencia">
+
+        <div class="carta-cuerpo">
+            <p><strong>EMILIO GONZALEZ ZARATE</strong></p>
+            <p>PRESENTE.</p>
+            
+            <p>El derecho a la identidad está consagrado en nuestra Constitución. En la Secretaría de Gobernación trabajamos todos los días para garantizar que las y los mexicanos gocen de este derecho plenamente...</p>
+            
+            <div class="firma-digital">
+                <p class="firma-nombre">ROSA ICELA RODRÍGUEZ VELÁZQUEZ</p>
+                <p>SECRETARIA DE GOBERNACIÓN</p>
+            </div>
+        </div>
+
+        <div class="dev-note">
+            <strong>Ayuda Extra (Modificaciones):</strong><br>
+            - <strong>Fuentes:</strong> Se utilizó Arial. Si necesitas la fuente exacta, se requiere importar 'Montserrat' vía Google Fonts.<br>
+            - <strong>Iconografía:</strong> No se extrajeron iconos individuales (bandera, escudo) para evitar errores de ruta; se asume que se visualizarán mediante la carga de <em>curp.png</em> en el contenedor principal o mediante recortes CSS (object-fit).<br>
+            - <strong>Código de Barras:</strong> Se dejó el espacio en la parte inferior de la constancia para ser llenado por la imagen de referencia.
+        </div>
+    </div>
+
+</body>
+</html>
